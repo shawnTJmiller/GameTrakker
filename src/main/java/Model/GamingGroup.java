@@ -8,14 +8,15 @@ public class GamingGroup {
     private int groupId;
     private String groupName;
     private List<Player> players = new ArrayList<Player>();
+    Player player = new Player();
 
     public GamingGroup(String groupName, List<Player> players){
         this.groupName = groupName;
         this.players = players;
     }
 
-    public GamingGroup(int groupId){
-        this.groupId = groupId;
+    public GamingGroup(Player player){
+        this.player = player;
     }
 
     public GamingGroup() {
@@ -35,6 +36,14 @@ public class GamingGroup {
         Player newPlayer = new Player();
         players.add(newPlayer);
         return players;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 
 }

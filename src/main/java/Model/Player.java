@@ -27,7 +27,7 @@ public class Player {
 
     //Getters
     public int getPlayerId() { return playerId; }
-    public String getUserName() { return userName }
+    public String getUserName() { return userName; }
     public String getFirstName(String first_name) {
         return firstName;
     }

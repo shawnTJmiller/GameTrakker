@@ -16,6 +16,7 @@ public class Game {
     private boolean hasDice;
     private boolean hasFigurines;
     private boolean hasTiles;
+    private boolean hasTimer;
 
     //Constructors
     public Game(String name) {
@@ -76,6 +77,7 @@ public class Game {
     public boolean isHasTiles() {
         return hasTiles;
     }
+    public boolean isHasTimer() { return hasTimer; }
 
     //Setters
     public void setGameId(int gameId) {this.gameId = gameId; }
@@ -118,4 +120,5 @@ public class Game {
     public void setHasTiles(boolean hasTiles) {
         this.hasTiles = hasTiles;
     }
+    public void setHasTimer(boolean has_timer) { this.hasTimer = hasTimer; }
 }

@@ -2,24 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c07a7a95-6bb6-47d5-b571-28359a27cad2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameTrakker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/GameTrakker Data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/GameTrakker Schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlayerDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/PlayerDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/GameSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/GamingGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/PlaySession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/PlayerGameSession.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/GameDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/GamingGroupDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGameDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGamingGroupDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlayerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/GamingGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/GamingGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +53,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tech_Fitness_Pal" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -113,10 +104,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="277" y="96" key="#Project_Structure/0.0.1368.872@0.0.1368.872" timestamp="1580412941796" />
-    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser" timestamp="1582756938749">
+    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser" timestamp="1583440012241">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1582756938749" />
+    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1583440012241" />
     <state x="758" y="218" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1582752109861">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -149,5 +140,9 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="215" y="92" key="Maven.ArtifactSearchDialog/0.0.1368.872@0.0.1368.872" timestamp="1582753965442" />
+    <state x="688" y="187" width="672" height="678" key="search.everywhere.popup" timestamp="1583437713907">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="688" y="187" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1583437713907" />
   </component>
 </project>
