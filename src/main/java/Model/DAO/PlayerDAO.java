@@ -1,10 +1,11 @@
 package Model.DAO;
 
+import Model.Player;
+
 public interface PlayerDAO {
-    public void savePlayer(int playerId, String firstName);
-    public Object getPlayerByPlayerId(int playerId);
-    public Object getPlayerByFirstName(String firstName);
-    public void updatePlayer(String lastName, String nickName, int age, int playerId);
-    public void removePlayerByPlayerId(int playerId);
-    public void removePlayerByUserName(String UserName);
+    public void savePlayer(int playerId, String userName);
+    public Player getPlayerByPlayerId(int playerId);
+    public Player getPlayerByUserName(String userName);
+    public void updatePlayer(Player player);
+    public void deletePlayer(Player player);
 }

@@ -1,25 +1,31 @@
 package Model;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
 
 public class PlaySession {
 
     private int sessionId;
     private String sessionName;
-    private LocalDateTime sessionDate;
+    private LocalDate sessionDate;
     private String sessionLocation;
     private boolean hasPrize;
-    private String prize;
+    private String prize = "";
     private BigDecimal prizeMoney = new BigDecimal(0.00);
 
-    public PlaySession(int sessionId, int groupId) {
-        this.sessionId = sessionId;
+    GamingGroup group = new GamingGroup();
+
+    public PlaySession(String sessionName, LocalDate sessionDate, String sessionLocation, boolean hasPrize, GamingGroup group) {
+        this.sessionName = sessionName;
+        this.sessionDate = sessionDate;
+        this.sessionLocation = sessionLocation;
+        this.hasPrize = hasPrize;
+        this.group = group;
+
+        setPrizeForGame(hasPrize);
     }
+
     public PlaySession() {
-        //need above constructor to work;
     }
 
     //getters
@@ -29,7 +35,7 @@ public class PlaySession {
     public String getSessionName() {
         return sessionName;
     }
-    public LocalDateTime getSessionDate() {
+    public LocalDate getSessionDate() {
         return sessionDate;
     }
     public String getSessionLocation() {
@@ -52,7 +58,7 @@ public class PlaySession {
     public void setSessionName(String sessionName) {
         this.sessionName = sessionName;
     }
-    public void setSessionDate(LocalDateTime sessionDate) {
+    public void setSessionDate(LocalDate sessionDate) {
         this.sessionDate = sessionDate;
     }
     public void setSessionLocation(String sessionLocation) {
@@ -66,6 +72,16 @@ public class PlaySession {
     }
     public void setPrizeMoney(BigDecimal prizeMoney) {
         this.prizeMoney = prizeMoney;
+    }
+
+    public String setPrizeForGame(Boolean hasPrize) {
+        if (hasPrize) {
+            setPrize(prize);
+            if (prize.equals("Money") || prize.equals("Gift Card")) {
+                setPrizeMoney(prizeMoney);
+            }
+        }
+        return prize;
     }
 
 }

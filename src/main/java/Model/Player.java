@@ -17,32 +17,32 @@ public class Player {
 
     public Player(int playerId) { this.playerId = playerId; }
 
-    public Player(String firstName) {
-        this.firstName = firstName;
+    public Player(String userName) {
+        this.userName = userName;
     }
 
     public Player() {
-        //Need to get ^previous Model.Player to resolve in Group.
     }
 
     //Getters
     public int getPlayerId() { return playerId; }
     public String getUserName() { return userName; }
-    public String getFirstName(String first_name) {
+    public String getFirstName() {
         return firstName;
     }
-    public String getLastName(String last_name) {
+    public String getLastName() {
         return lastName;
     }
-    public String getNickName(String nickName) {
+    public String getNickName() {
         return nickName;
     }
-    public int getAge(int age) {
+    public int getAge() {
         return this.age;
     }
 
     //Setters
     public void setPlayerId(int playerId) { this.playerId = playerId; }
+    public void setUserName(String userName) { this.userName = userName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
     public void setLastName(String lastName) { this.lastName = lastName; }
     public void setNickName(String nickName) {

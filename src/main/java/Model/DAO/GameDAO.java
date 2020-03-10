@@ -1,19 +1,21 @@
 package Model.DAO;
 
 import Model.Game;
+import Model.GamingGroup;
+import Model.Player;
 
 import java.util.List;
+import java.util.Set;
 
 public interface GameDAO {
-    public Game saveGame(Game game);
-    public void addGameToInventory(String userName, String name);
-    public Game getGameByName(String name);
-    public List<Game> getGamesByGenre(String genre, String subGenre);
-    public List<Game> getGamesByAgeMin(int age);
-    public List<Game> getGameByPlayerSize(int numPlayers);
-    public List<Game> getGamesWithCards(boolean hasCards);
-    public List<Game> getGamesWithFigurines(boolean hasFigurines);
-    public void updateGameInfo(String name);
-    public void removeGameFromInventory(String name, String userName);
+    Game saveNewGameFullData(Game game);
+    Game saveNewGameBaseData(Game game);
+    void addGameToInventory(Player player, Game game);
+    List<Game> getGamesByPlayer(Player player);
+    Set<Game> getGamesByGroup(GamingGroup group);
+    void updateGameInfo(Game game);
+    void updateGameGenre(Game game);
+    void updateGameBooleans(Game game);
+    void removeGameFromInventory(Game game, Player player);
 
 }

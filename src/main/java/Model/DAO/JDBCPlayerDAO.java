@@ -19,63 +19,55 @@ public class JDBCPlayerDAO implements PlayerDAO {
 
 
     @Override
-    public void savePlayer(int playerId, String firstName) {
-        jdbcTemplate.update("INSERT INTO player(first_name) VALUES(?)", firstName);
+    public void savePlayer(int playerId, String userName) {
+        jdbcTemplate.update("INSERT INTO player(first_name) VALUES(?)", userName);
     }
 
     @Override
-    public Object getPlayerByPlayerId(int playerId) {
+    public Player getPlayerByPlayerId(int playerId) {
         String sqlSearchForPlayerId = "SELECT * FROM player WHERE playerId = ?";
         SqlRowSet player = jdbcTemplate.queryForRowSet(sqlSearchForPlayerId, playerId);
         Player thisPlayer = null;
         if (player.next()) {
             thisPlayer = new Player();
-            thisPlayer.getFirstName(player.getString("first_name"));
-            thisPlayer.getLastName(player.getString("last_name"));
-            thisPlayer.getNickName(player.getString("nick_name"));
-            thisPlayer.getAge(player.getInt("age"));
+            thisPlayer.setUserName(player.getString("user_name"));
+            thisPlayer.setFirstName(player.getString("first_name"));
+            thisPlayer.setLastName(player.getString("last_name"));
+            thisPlayer.setNickName(player.getString("nick_name"));
+            thisPlayer.setAge(player.getInt("age"));
         }
         return thisPlayer;
     }
 
     @Override
-    public Object getPlayerByFirstName(String firstName) {
-        String sqlSearchForFirstName = "SELECT first_name FROM player WHERE first_name = ?";
-        SqlRowSet player = jdbcTemplate.queryForRowSet(sqlSearchForFirstName, firstName);
+    public Player getPlayerByUserName(String userName) {
+        String sqlSearchForFirstName = "SELECT first_name FROM player WHERE user_name = ?";
+        SqlRowSet player = jdbcTemplate.queryForRowSet(sqlSearchForFirstName, userName);
         Player thisPlayer = null;
         if (player.next()) {
             thisPlayer = new Player();
-            thisPlayer.getFirstName(player.getString("first_name"));
-            thisPlayer.getLastName(player.getString("last_name"));
-            thisPlayer.getNickName(player.getString("nick_name"));
-            thisPlayer.getAge(player.getInt("age"));
+            thisPlayer.setUserName(player.getString("user_name"));
+            thisPlayer.setFirstName(player.getString("first_name"));
+            thisPlayer.setLastName(player.getString("last_name"));
+            thisPlayer.setNickName(player.getString("nick_name"));
+            thisPlayer.setAge(player.getInt("age"));
         }
         return thisPlayer;
     }
 
     @Override
-    public void updatePlayer(String lastName, String nickName, int age, int playerId) {
-        jdbcTemplate.update("UPDATE player SET last_name = ?, nick_name = ?, age = ? WHERE playerId = ?",
-                lastName, nickName, age, playerId);
+    public void updatePlayer(Player player) {
+        jdbcTemplate.update("UPDATE player SET first_name = ?, last_name = ?, nick_name = ?, age = ? WHERE playerId = ?",
+                player.getFirstName(), player.getLastName(), player.getNickName(), player.getAge(), player.getPlayerId());
     }
 
     @Override
-    public void removePlayerByPlayerId(int playerId) {
+    public void deletePlayer(Player player) {
         jdbcTemplate.update("DELETE * FROM player_group WHERE player_id = ?;"
                     + "DELETE * FROM player_inventory WHERE player_id = ?;"
                     + "DELETE * FROM player_game_session WHERE player_id = ?;"
                     + "DELETE * FROM player WHERE player_id = ?;",
-                playerId, playerId, playerId, playerId, playerId);
+                player.getPlayerId(), player.getPlayerId(), player.getPlayerId(), player.getPlayerId(), player.getPlayerId());
     }
 
-    public void removePlayerByUserName(String userName) {
-        jdbcTemplate.update("DELETE * FROM player_group WHERE player_id = " +
-                                "(SELECT player_id FROM player WHERE user_name = ?);" +
-                            "DELETE * FROM player_inventory WHERE player_id = " +
-                                "(SELECT player_id FROM player WHERE user_name = ?);" +
-                            "DELETE * FROM player_game_session WHERE player_id = " +
-                                "(SELECT player_id FROM player WHERE user_name = ?);" +
-                            "DELETE * FROM player WHERE user_name = ?;",
-                userName, userName, userName, userName, userName);
-    }
 }

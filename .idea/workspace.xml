@@ -2,14 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c07a7a95-6bb6-47d5-b571-28359a27cad2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/GameDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/GamingGroupDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGameDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGamingGroupDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Functions/GameSelection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/GameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/GamingGroupDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/GamingGroupDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGamingGroupDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGamingGroupDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlayerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/PlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/PlayerDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/GamingGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/GamingGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/PlaySession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/PlaySession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,9 +143,13 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="215" y="92" key="Maven.ArtifactSearchDialog/0.0.1368.872@0.0.1368.872" timestamp="1582753965442" />
-    <state x="688" y="187" width="672" height="678" key="search.everywhere.popup" timestamp="1583437713907">
+    <state x="740" y="65" key="refactoring.ChangeSignatureDialog" timestamp="1583803938394">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="688" y="187" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1583437713907" />
+    <state x="740" y="65" key="refactoring.ChangeSignatureDialog/0.0.1368.872@0.0.1368.872" timestamp="1583803938394" />
+    <state x="690" y="189" width="672" height="678" key="search.everywhere.popup" timestamp="1583804998015">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="690" y="189" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1583804998015" />
   </component>
 </project>

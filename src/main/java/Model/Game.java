@@ -1,8 +1,14 @@
 package Model;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.NotNull;
+
 public class Game {
 
     private int gameId;
+    @NotNull @NotEmpty @NotBlank
     private String name;
     private int minPlayers;
     private int maxPlayers;
@@ -24,7 +30,6 @@ public class Game {
     }
 
     public Game() {
-        //Need to get previous ^Model.Game to resolve in Model.PlaySession
     }
 
     public Game(String name, int minPlayers, int maxPlayers, int minTime, int maxTime, int agesUp) {

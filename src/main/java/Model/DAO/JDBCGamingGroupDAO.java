@@ -1,6 +1,5 @@
 package Model.DAO;
 
-import Model.Game;
 import Model.GamingGroup;
 import Model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +9,7 @@ import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Component
 public class JDBCGamingGroupDAO implements GamingGroupDAO {
@@ -25,23 +22,33 @@ public class JDBCGamingGroupDAO implements GamingGroupDAO {
     }
 
     @Override
-    public void createNewGroup(String groupName, Player player) {
-        GamingGroup group = new GamingGroup();
-
+    public GamingGroup createNewGroupSolo(String groupName, Player player) {
+        GamingGroup group = new GamingGroup(groupName, player);
         jdbcTemplate.update("INSERT INTO gaming_group (group_name) VALUES ?;" +
-                "INSERT INTO player_group (group_id, player_id) VALUES (?, ?)", groupName, group.getGroupId(), player.getPlayerId() );
+                "INSERT INTO player_group (group_id, player_id) VALUES ((SELECT group_id FROM gaming_group WHERE group_name = ?), ?)", groupName, groupName, player.getPlayerId());
+        return group;
+    }
+
+    @Override
+    public GamingGroup createNewGroupMulti(String groupName, List<Player> players) {
+        GamingGroup group = new GamingGroup(groupName, players);
+        jdbcTemplate.update("INSERT INTO gaming_group (group_name) VALUES ?;", groupName);
+        for (Player player : players) {
+            jdbcTemplate.update("INSERT INTO player_group (group_id, player_id) VALUES ((SELECT group_id FROM gaming_group WHERE group_name = ?), ?)", groupName, player.getPlayerId());
+        }
+        return group;
     }
 
     @Override
     public List<GamingGroup> getGroupsByUserName(String userName) {
-        String sqlSearchForGroups = "SELECT g.group_name " +
+        String sqlSearchForGroups = "SELECT gg.group_name " +
                 "FROM gaming_group gg " +
                 "INNER JOIN player_group pg ON gg.group_id = pg.group_id" +
                 "INNER JOIN player p ON pg.player_id = p.player_id" +
-                "WHERE user_name = ?;";
+                "WHERE user_name LIKE '%'?'%';";
         SqlRowSet groups = jdbcTemplate.queryForRowSet(sqlSearchForGroups, userName);
         List<GamingGroup> activeGroups = new ArrayList<>();
-        GamingGroup thisGroup = null;
+        GamingGroup thisGroup; // initialize as null
         while (groups.next()) {
             thisGroup = new GamingGroup();
             thisGroup.setGroupName(groups.getString("group_name"));
@@ -57,12 +64,13 @@ public class JDBCGamingGroupDAO implements GamingGroupDAO {
                 "FROM player p " +
                 "INNER JOIN player_group pg ON p.player_id = pg.player_id " +
                 "INNER JOIN gaming_group gg ON pg.group_id = gg.group_id " +
-                "WHERE group_name = ?;";
+                "WHERE group_name LIKE '%'?'%';";
         SqlRowSet players = jdbcTemplate.queryForRowSet(sqlSearchForPlayers, groupName);
         List<Player> groupMembers = new ArrayList<>();
-        Player thisPlayer = null;
+        Player thisPlayer; // initialize as null
         while (players.next()) {
             thisPlayer = new Player();
+            thisPlayer.setUserName(players.getString("user_name"));
             thisPlayer.setFirstName(players.getString("first_name"));
             thisPlayer.setLastName(players.getString("last_name"));
             thisPlayer.setNickName(players.getString("nick_name"));
@@ -74,69 +82,25 @@ public class JDBCGamingGroupDAO implements GamingGroupDAO {
     }
 
     @Override
-    public Set<Game> getGamesByGroup(String groupName) {
-        String sqlGetListOfGames = "SELECT gm.name " +
-                "FROM game gm " +
-                "INNER JOIN player_inventory pi ON gm.game_id = pi.game_id " +
-                "INNER JOIN player p ON p.player_id = pi.player_id " +
-                "INNER JOIN player_group pg ON pg.player_id = p.player_id " +
-                "INNER JOIN gaming_group gg ON pg.group_id = gg.group_id " +
-                "WHERE group_name = ?;";
-        SqlRowSet games = jdbcTemplate.queryForRowSet(sqlGetListOfGames, groupName);
-        Set<Game> groupGames = new HashSet<>();
-        Game thisGame = null;
-        while (games.next()) {
-            thisGame = new Game();
-            thisGame.setGameId(games.getInt("game_id"));
-            thisGame.setName(games.getString("name"));
-            thisGame.setMinPlayers(games.getInt("min_num_players"));
-            thisGame.setMaxPlayers(games.getInt("max_num_players"));
-            thisGame.setMinTime(games.getInt("min_play_time"));
-            thisGame.setMaxTime(games.getInt("max_play_time"));
-            thisGame.setAgesUp(games.getInt("recommended_age_min"));
-            thisGame.setGenre(games.getString("genre"));
-            thisGame.setSubGenre(games.getString("sub_genre"));
-            thisGame.setHasDice(games.getBoolean("has_dice"));
-            thisGame.setHasCards(games.getBoolean("has_cards"));
-            thisGame.setHasBoard(games.getBoolean("has_board"));
-            thisGame.setHasTiles(games.getBoolean("has_tiles"));
-            thisGame.setHasFigurines(games.getBoolean("has_figurines"));
-            thisGame.setHasTimer(games.getBoolean("has_timer"));
-            groupGames.add(thisGame);
-        }
-        return groupGames;
+    public void addPlayerToGroup(Player player, GamingGroup group) {
+        String sqlNewPlayerAdd = "INSERT INTO player_group (player_id, group_id) " +
+                "VALUES (?, ?);";
+        jdbcTemplate.update(sqlNewPlayerAdd, player.getPlayerId(), group.getGroupId());
+
+        group.addNewPlayer(player);
     }
 
     @Override
-    public void addPlayerToGroup(String userName, String groupName) {
-        String sqlNewPlayerAdd = "INSERT INTO player_group (player_id, group_id) VALUES (" +
-                "(SELECT player_id FROM player WHERE user_name = ?), " +
-                "(SELECT group_id FROM gaming_group WHERE group_id = ?)" +
-                ");";
-        jdbcTemplate.update(sqlNewPlayerAdd, userName, groupName);
+    public void removePlayerFromGroup(Player player, GamingGroup group) {
+        jdbcTemplate.update("DELETE * FROM player_group " +
+                        "WHERE player_id = ? AND group_id = ?;",
+                player.getPlayerId(), group.getGroupId());
     }
 
     @Override
-    public void removePlayerFromGroup(String userName, String groupName) {
-        jdbcTemplate.update("DELETE * " +
-                            "FROM player_group " +
-                            "WHERE player_id = " +
-                                "(SELECT player_id FROM player WHERE user_name = ?)" +
-                            "AND group_id = " +
-                                "(SELECT group_id FROM gaming_group WHERE group_name = ?);",
-                userName, groupName);
-    }
-
-    @Override
-    public void deleteGamingGroup(String groupName) {
-        jdbcTemplate.update("DELETE * " +
-                            "FROM player_group " +
-                            "WHERE group_id = " +
-                                "(SELECT group_id FROM gaming_group WHERE group_name = ?);" +
-                            "DELETE * " +
-                            "FROM gaming_group " +
-                            "WHERE group_id = " +
-                                "(SELECT group_id FROM gaming_group WHERE group_name = ?);",
-                 groupName, groupName);
+    public void deleteGamingGroup(GamingGroup group) {
+        jdbcTemplate.update("DELETE * FROM player_group WHERE group_id = ?;" +
+                        "DELETE * FROM gaming_group WHERE group_id = ?;",
+                        group.getGroupId(), group.getGroupId());
     }
 }
