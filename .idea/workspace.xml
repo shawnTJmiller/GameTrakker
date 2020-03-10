@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c07a7a95-6bb6-47d5-b571-28359a27cad2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Functions/GameSelection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlaySessionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/PlaySessionDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/GameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/GamingGroupDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/GamingGroupDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGamingGroupDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGamingGroupDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlayerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/PlayerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/PlayerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/GamingGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/GamingGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/PlaySession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/PlaySession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Player.java" afterDir="false" />
     </list>
@@ -107,10 +100,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="277" y="96" key="#Project_Structure/0.0.1368.872@0.0.1368.872" timestamp="1580412941796" />
-    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser" timestamp="1583440012241">
+    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser" timestamp="1583818393459">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1583440012241" />
+    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1583818393459" />
     <state x="758" y="218" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1582752109861">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -131,10 +124,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="821" y="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1368.872@0.0.1368.872" timestamp="1582753005798" />
-    <state x="759" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1582754375606">
+    <state x="399" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583816094020">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="759" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1368.872@0.0.1368.872" timestamp="1582754375606" />
+    <state x="399" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1368.872@0.0.1368.872" timestamp="1583816094020" />
     <state x="466" y="180" key="FileChooserDialogImpl" timestamp="1582752462490">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
