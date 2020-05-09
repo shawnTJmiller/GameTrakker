@@ -1,8 +1,5 @@
 package Model;
 
-import Model.GameSession;
-import Model.Player;
-
 public class PlayerGameSession {
 
     Player player = new Player();

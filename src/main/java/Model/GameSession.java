@@ -1,38 +1,42 @@
 package Model;
 
-import Model.Game;
-
 public class GameSession {
 
-    PlaySession session = new PlaySession();
-    int sessionId = session.getSessionId();
-    Game game = new Game();
-    int gameId = game.getGameId();
-
+    //PlaySession session;
+    private int playSessionId;
+    private int gameId;
     private int gameSessionId;
-    private String gameSelectionType;
 
-    public GameSession(int gameSessionId, int gameId, int sessionId){
+    private String gameSelectType;
+
+    public GameSession(int gameSessionId, int gameId, String gameSelectType){
         this.gameSessionId = gameSessionId;
-        this.sessionId = sessionId;
         this.gameId = gameId;
+
     }
+
 
     public GameSession(){
 
     }
 
+    public int getPlaySessionId() { return playSessionId; }
+    public int getGameId() { return gameId; }
     public int getGameSessionId() {
         return gameSessionId;
     }
     public String getGameSelectionType() {
-        return gameSelectionType;
+        return gameSelectType;
     }
 
+    public void setPlaySessionId(int playSessionId) { this.playSessionId = playSessionId; }
+    public void setGameId(int gameId) { this.gameId = gameId; }
     public void setGameSessionId(int gameSessionId) {
         this.gameSessionId = gameSessionId;
     }
     public void setGameSelectionType(String gameSelectionType) {
-        this.gameSelectionType = gameSelectionType;
+        this.gameSelectType = gameSelectionType;
     }
+
+    /// Arraylist of ints that represent the gameIds that can be pulled from JDBC
 }

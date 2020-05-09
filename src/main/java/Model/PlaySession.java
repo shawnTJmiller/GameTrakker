@@ -4,6 +4,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PlaySession {
 
@@ -17,16 +19,17 @@ public class PlaySession {
     private BigDecimal moneyPrize = new BigDecimal(0.00);
     private int groupId;
 
-    GamingGroup group = new GamingGroup();
+    private List<Integer> gameSessionId;
 
     public PlaySession(String sessionName, LocalDate sessionDate, String sessionLocation, boolean hasPrize, int groupId) {
         this.sessionName = sessionName;
         this.sessionDate = sessionDate;
         this.sessionLocation = sessionLocation;
         this.hasPrize = hasPrize;
-        this.groupId = group.getGroupId();
+        this.groupId = groupId;
 
         setPrizeForGame(hasPrize);
+        gameSessionId = new ArrayList<>();
     }
 
     public PlaySession() {

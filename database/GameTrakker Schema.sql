@@ -1,11 +1,13 @@
 BEGIN TRANSACTION;
 CREATE TABLE player (
-        player_id SERIAL NOT NULL PRIMARY KEY,
+        player_id SERIAL NOT NULL,
+        user_name VARCHAR(30) UNIQUE,
         first_name VARCHAR(15) NOT NULL,
         last_name VARCHAR(20),
         nick_name VARCHAR(30),
         age INT,
-        created_at TIMESTAMP
+        created_at TIMESTAMP,
+        CONSTRAINT player_player_id_user_name PRIMARY KEY(player_id, user_name)
 );
 
 CREATE TABLE gaming_group (
@@ -123,9 +125,8 @@ CREATE TABLE app_user(
 );
 
 ALTER TABLE player
-ADD user_name VARCHAR(30) UNIQUE;
-
-
+ADD FOREIGN KEY (user_name)
+REFERENCES app_user(user_name);
 
 --ROLLBACK;
 END TRANSACTION;

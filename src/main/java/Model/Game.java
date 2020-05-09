@@ -126,4 +126,70 @@ public class Game {
         this.hasTiles = hasTiles;
     }
     public void setHasTimer(boolean has_timer) { this.hasTimer = hasTimer; }
+
+    //toString, equals, hashCode  methods
+    @Override
+    public String toString() {
+        return "Game{" +
+                "gameId=" + gameId +
+                ", name='" + name + '\'' +
+                ", minPlayers=" + minPlayers +
+                ", maxPlayers=" + maxPlayers +
+                ", minTime=" + minTime +
+                ", maxTime=" + maxTime +
+                ", agesUp=" + agesUp +
+                ", genre='" + genre + '\'' +
+                ", subGenre='" + subGenre + '\'' +
+                ", hasBoard=" + hasBoard +
+                ", hasCards=" + hasCards +
+                ", hasDice=" + hasDice +
+                ", hasFigurines=" + hasFigurines +
+                ", hasTiles=" + hasTiles +
+                ", hasTimer=" + hasTimer +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Game)) return false;
+
+        Game game = (Game) o;
+
+        if (getGameId() != game.getGameId()) return false;
+        if (getMinPlayers() != game.getMinPlayers()) return false;
+        if (getMaxPlayers() != game.getMaxPlayers()) return false;
+        if (getMinTime() != game.getMinTime()) return false;
+        if (getMaxTime() != game.getMaxTime()) return false;
+        if (getAgesUp() != game.getAgesUp()) return false;
+        if (isHasBoard() != game.isHasBoard()) return false;
+        if (isHasCards() != game.isHasCards()) return false;
+        if (isHasDice() != game.isHasDice()) return false;
+        if (isHasFigurines() != game.isHasFigurines()) return false;
+        if (isHasTiles() != game.isHasTiles()) return false;
+        if (isHasTimer() != game.isHasTimer()) return false;
+        if (!getName().equals(game.getName())) return false;
+        if (!getGenre().equals(game.getGenre())) return false;
+        return getSubGenre().equals(game.getSubGenre());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getGameId();
+        result = 31 * result + getName().hashCode();
+        result = 31 * result + getMinPlayers();
+        result = 31 * result + getMaxPlayers();
+        result = 31 * result + getMinTime();
+        result = 31 * result + getMaxTime();
+        result = 31 * result + getAgesUp();
+        result = 31 * result + getGenre().hashCode();
+        result = 31 * result + getSubGenre().hashCode();
+        result = 31 * result + (isHasBoard() ? 1 : 0);
+        result = 31 * result + (isHasCards() ? 1 : 0);
+        result = 31 * result + (isHasDice() ? 1 : 0);
+        result = 31 * result + (isHasFigurines() ? 1 : 0);
+        result = 31 * result + (isHasTiles() ? 1 : 0);
+        result = 31 * result + (isHasTimer() ? 1 : 0);
+        return result;
+    }
 }

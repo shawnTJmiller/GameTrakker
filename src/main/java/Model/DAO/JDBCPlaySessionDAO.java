@@ -28,6 +28,10 @@ public class JDBCPlaySessionDAO implements PlaySessionDAO {
                 "VALUES (?,?,?,?,?);";
         jdbcTemplate.update(newSqlRow, session.getSessionName(), session.getSessionDate(), session.getSessionLocation(),
                 session.isHasPrize(), group.getGroupId());
+        if (session.isHasPrize()) {
+            String newPrizeEntry = "INSERT INTO play_session (prize, money_prize) Values (?,?);";
+            jdbcTemplate.update(newPrizeEntry, session.getPrize(), session.getMoneyPrize());
+        }
     }
 
     @Override
