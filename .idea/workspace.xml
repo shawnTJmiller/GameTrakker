@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c07a7a95-6bb6-47d5-b571-28359a27cad2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/GameSessionDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGameSessionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlayerGameSessionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/PlayerGameSessionDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/GameTrakker Data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/GameTrakker Data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/GameTrakker Schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/GameTrakker Schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGameSessionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCGameSessionDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlaySessionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/DAO/JDBCPlaySessionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/GameSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/GameSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/PlaySession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/PlaySession.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/PlayerGameSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/PlayerGameSession.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +50,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Vending_Machine" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Tech_Fitness_Pal" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -101,14 +97,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="277" y="96" key="#Notifications/0.0.1368.872@0.0.1368.872" timestamp="1582746659575" />
-    <state x="277" y="96" key="#Project_Structure" timestamp="1580412941796">
+    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser" timestamp="1590696212620">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="277" y="96" key="#Project_Structure/0.0.1368.872@0.0.1368.872" timestamp="1580412941796" />
-    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser" timestamp="1588998013760">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1588998013760" />
+    <state x="490" y="153" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1590696212620" />
     <state x="758" y="218" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1582752109861">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -133,25 +125,25 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="399" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1368.872@0.0.1368.872" timestamp="1583816094020" />
-    <state x="466" y="180" key="FileChooserDialogImpl" timestamp="1584447370073">
+    <state x="466" y="180" key="FileChooserDialogImpl" timestamp="1591380687358">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="466" y="180" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1584447370073" />
+    <state x="466" y="180" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1591380687358" />
     <state x="215" y="92" key="Maven.ArtifactSearchDialog" timestamp="1582753965442">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="215" y="92" key="Maven.ArtifactSearchDialog/0.0.1368.872@0.0.1368.872" timestamp="1582753965442" />
-    <state x="380" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1584446443334">
+    <state x="380" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1590086889549">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="380" y="260" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1584446443334" />
+    <state x="380" y="260" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1590086889549" />
     <state x="740" y="65" key="refactoring.ChangeSignatureDialog" timestamp="1583803938394">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="740" y="65" key="refactoring.ChangeSignatureDialog/0.0.1368.872@0.0.1368.872" timestamp="1583803938394" />
-    <state x="690" y="189" width="672" height="678" key="search.everywhere.popup" timestamp="1583804998015">
+    <state x="691" y="189" width="672" height="678" key="search.everywhere.popup" timestamp="1590691817232">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="690" y="189" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1583804998015" />
+    <state x="691" y="189" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1590691817232" />
   </component>
 </project>

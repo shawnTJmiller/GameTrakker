@@ -7,11 +7,13 @@ public class PlayerGameSession {
     GameSession gameSession = new GameSession();
     int gameSessionId = gameSession.getGameSessionId();
 
-    private int standing;
-    private int points;
-    private int score;
-    private boolean onTeam;
-    private boolean choseGame;
+
+
+    private Integer standing;
+    private Integer points;
+    private Integer score;
+    private Boolean onTeam;
+    private Boolean choseGame;
 
     public PlayerGameSession() {
 
@@ -52,4 +54,5 @@ public class PlayerGameSession {
     public void setChoseGame(boolean choseGame) {
         this.choseGame = choseGame;
     }
+
 }

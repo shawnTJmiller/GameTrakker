@@ -99,8 +99,9 @@ public class JDBCPlaySessionDAO implements PlaySessionDAO {
 
     @Override
     public void updatePlaySession(PlaySession session) {
-        jdbcTemplate.update("UPDATE play_session SET session_name = ?, session_date = ?, " +
-                "session_location = ?, has_prize = ?, prize = ?, money_prize = ?, group_id = ? WHERE session_id = ?;",
+        jdbcTemplate.update("BEGIN TRANSACTION; UPDATE play_session SET session_name = ?, session_date = ?, " +
+                "session_location = ?, has_prize = ?, prize = ?, money_prize = ?, group_id = ? WHERE session_id = ?;" +
+                        "COMMIT;",
                 session.getSessionName(), session.getSessionDate(), session.getSessionLocation(), session.isHasPrize(),
                 session.getPrize(), session.getMoneyPrize(), session.getGroupId(), session.getSessionId());
 

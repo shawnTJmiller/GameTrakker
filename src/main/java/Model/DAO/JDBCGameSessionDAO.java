@@ -62,7 +62,7 @@ public class JDBCGameSessionDAO implements GameSessionDAO {
 
     @Override
     public void updateGameSession(GameSession gameSession) {
-        jdbcTemplate.update("UPDATE game_session SET session_id = ?, game_id = ?, game_selection_type = ?;" +
+        jdbcTemplate.update("BEGIN TRANSACTION; UPDATE game_session SET session_id = ?, game_id = ?, game_selection_type = ?; COMMIT;" +
                 "WHERE game_session_id = ?;", gameSession.getPlaySessionId(), gameSession.getGameId(), gameSession.getGameSelectionType(),
         gameSession.getGameSessionId());
     }
